@@ -1,11 +1,3 @@
-#########################
-# Analiza Danych 2022/23#
-#                       #
-# Filip Jerzykiewicz    #
-# Martyna Żarska        #
-# Elza Schneider        #
-#########################
-
 library(data.table)
 library(parallel)
 
