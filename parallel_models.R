@@ -1,12 +1,12 @@
 library(data.table)
 library(parallel)
 
-###################CONFIG#########################
-no_cores <- detectCores()                        #
-y_in <- 'Values_Y.csv'                           #
-x_in <- 'SNPs_X.csv'                             #
-path_out <- '/home/filip/Analiza_danych/results' #
-##################################################
+###########CONFIG##########
+no_cores <- detectCores() #
+y_in <- 'Values_Y.csv'    #
+x_in <- 'SNPs_X.csv'      #
+path_out <- 'results.csv' #
+###########################
 
 # LOAD DATA
 val <- as.matrix(fread(y_in))
@@ -52,4 +52,4 @@ stopCluster(cl)
 
 # CONVERT OBTAINED LIST OF RESULTS INTO MATRIX AND EXPORT IT
 output_matrix <- do.call(rbind, models)
-write.table(output_matrix, file=path_out, sep='\t', row.names=FALSE)
+write.table(output_matrix, file=path_out,quotes=FALSE, sep='\t', row.names=FALSE)
